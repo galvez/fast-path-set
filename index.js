@@ -1,3 +1,5 @@
+'use strict'
+
 function set (obj, path, value) {
   const len = path.length
   let i = 0, prop = '', parent
