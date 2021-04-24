@@ -26,3 +26,7 @@ $ node bench.js lodash.set
 $ node bench.js fast-path-set
 28743.362992048264
 ```
+
+## License
+
+MIT
