@@ -2,14 +2,13 @@
 
 function set (obj, path, value) {
   const len = path.length
-  let i = 0, prop = '', parent
+  let i = 0, prop = ''
   while (i < len) {
     if (path[i] === '.') {
       if (prop in obj) {
         obj = obj[prop]
         prop = ''
       } else {
-        parent = obj
         obj = obj[prop] = {}
         prop = ''
       }

@@ -8,7 +8,7 @@
   },
   "bundleDependencies": false,
   "deprecated": false,
-  "description": "A small function 5x faster than lodash.set",
+  "description": "A small function 3x faster than lodash.set",
   "files": [
     "index.js",
     "README.md"
@@ -29,5 +29,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
     "tap": "^14.11.0"
+  },
+  "dependencies": {
+    "lodash.set": "^4.3.2"
   }
 }
