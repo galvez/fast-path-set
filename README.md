@@ -8,6 +8,15 @@ A fast drop-in replacement for [`lodash.set`](https://www.npmjs.com/package/loda
 $ npm i fast-path-set --save
 ```
 
+## Usage
+
+```js
+const set = require('fast-path-set')
+const obj = {}
+set(obj, 'a.b.c', 1)
+console.log(obj.a.b.c)
+```
+
 ## Benchmark
 
 ```
