@@ -8,10 +8,12 @@ function set (obj, path, value) {
       if (prop === '__proto__' || prop === 'constructor' || prop === 'prototype') {
         break
       }
-      if (prop in obj) {
+      if (typeof obj[prop] === 'object') {
         obj = obj[prop]
-      } else {
+      } else if (typeof obj[prop] === 'undefined') {
         obj = obj[prop] = {}
+      } else {
+        return
       }
       prop = ''
     } else {

@@ -27,7 +27,7 @@ $ npm i dset
 $ node bench.js dset
 70376.78514885902
 $ node bench.js fast-path-set
-31499.042026996613
+34950.48910498619
 ```
 
 ## License
