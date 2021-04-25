@@ -23,6 +23,7 @@ console.log(obj.a.b.c)
 $ npm i lodash.set
 $ node bench.js lodash.set
 89006.61856603622
+$ npm i dset
 $ node bench.js dset
 70376.78514885902
 $ node bench.js fast-path-set
