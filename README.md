@@ -35,7 +35,7 @@ $ node bench.js fast-path-set
 Thanks to
 [Luke Edwards](https://github.com/lukeed),
 [James M Snell](https://github.com/jasnell) and
-[Simone Sanfratello](https://github.com/simone-frantello)
+[Simone Sanfratello](https://github.com/simone-sanfratello)
 for helping polishing this to perfection.
 
 ## License
