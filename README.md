@@ -30,6 +30,14 @@ $ node bench.js fast-path-set
 63214.1385409832
 ```
 
+## Acknowledgements
+
+Thanks to
+[Luke Edwards](https://github.com/lukeed),
+[James M Snell](https://github.com/jasnell) and
+[Simone Sanfratello](https://github.com/simone-frantello)
+for helping polishing this to perfection.
+
 ## License
 
 MIT
