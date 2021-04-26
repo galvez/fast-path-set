@@ -1,29 +1,36 @@
 'use strict'
 
 function set (obj, path, value) {
+  if (obj == null) { throw new TypeError('obj is null or undefined') }
   const len = path.length
-  let i = 0, prop = ''
+  let i = 0; let l = 0; let prop = ''
   while (i < len) {
-    const p = path[i]
-    if (p == '.') {
-      if ((prop.length == 9 || prop.length == 11) && (prop == '__proto__' || prop == 'constructor' || prop == 'prototype')) {
-        break
+    if (path[i] === '.') {
+      prop = path.slice(l, i)
+      switch (prop.length) {
+        case 9:
+          if (prop === '__proto__' || prop === 'prototype') { return }
+          break
+        case 11:
+          if (prop === 'constructor') { return }
+          break
       }
-      const t = typeof obj[prop] 
-      if (t.length == 6 && t == 'object') {
-        obj = obj[prop]
-      } else if (t.length == 9 && t == 'undefined') {
-        obj = obj[prop] = {}
-      } else {
-        return
+      switch (typeof obj[prop]) {
+        case 'object':
+          obj = obj[prop]
+          break
+        case 'undefined':
+          obj = obj[prop] = {}
+          break
+        default:
+          return
       }
-      prop = ''
-    } else {
-      prop += p
+      l = ++i
+      continue
     }
     i++
   }
-  obj[prop] = value
+  obj[path.slice(l, i)] = value
 }
 
 module.exports = set
