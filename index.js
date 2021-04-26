@@ -1,7 +1,9 @@
 'use strict'
 
 function set (obj, path, value) {
-  if (obj == null) { throw new TypeError('obj is null or undefined') }
+  if (obj == null) {
+    throw new TypeError('obj is null or undefined')
+  }
   const len = path.length
   let i = 0; let l = 0; let prop = ''
   while (i < len) {
@@ -9,10 +11,14 @@ function set (obj, path, value) {
       prop = path.slice(l, i)
       switch (prop.length) {
         case 9:
-          if (prop === '__proto__' || prop === 'prototype') { return }
+          if (prop === '__proto__' || prop === 'prototype') {
+            return
+          }
           break
         case 11:
-          if (prop === 'constructor') { return }
+          if (prop === 'constructor') {
+            return
+          }
           break
       }
       switch (typeof obj[prop]) {
