@@ -4,20 +4,22 @@ function set (obj, path, value) {
   const len = path.length
   let i = 0, prop = ''
   while (i < len) {
-    if (path[i] === '.') {
-      if (prop === '__proto__' || prop === 'constructor' || prop === 'prototype') {
+    const p = path[i]
+    if (p == '.') {
+      if ((prop.length == 9 || prop.length == 11) && (prop == '__proto__' || prop == 'constructor' || prop == 'prototype')) {
         break
       }
-      if (typeof obj[prop] === 'object') {
+      const t = typeof obj[prop] 
+      if (t.length == 6 && t == 'object') {
         obj = obj[prop]
-      } else if (typeof obj[prop] === 'undefined') {
+      } else if (t.length == 9 && t == 'undefined') {
         obj = obj[prop] = {}
       } else {
         return
       }
       prop = ''
     } else {
-      prop += path[i]
+      prop += p
     }
     i++
   }
