@@ -21,7 +21,7 @@
     "type": "git",
     "url": "git+https://github.com/galvez/fast-path-set.git"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "devDependencies": {
     "eslint": "^7.22.0",
     "eslint-config-standard": "^16.0.2",
