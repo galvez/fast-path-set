@@ -1,1 +1,7 @@
-{ extends: 'standard' }
+{
+  extends: 'standard',
+  rules: {
+    'one-var': 'off',
+    'comma-dangle': 'off',
+  },
+ }

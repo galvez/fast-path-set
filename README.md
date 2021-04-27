@@ -17,6 +17,8 @@ set(obj, 'a.b.c', 1)
 console.log(obj.a.b.c)
 ```
 
+Check [`test.js`](https://github.com/galvez/fast-path-set/blob/main/test.js) for more detailed usage examples. There is one **key** difference to `lodash.set`, which is the fact `fast-path-set` will **prioritise safety** and abort attempts to overwrite non-object values. It also correctly prevents prototype pollution attacks.
+
 ## Benchmark
 
 ```

@@ -2,10 +2,12 @@
 
 const { performance } = require('perf_hooks')
 
+const runs = 100 ** 4
+
 if (process.argv.includes('lodash.set')) {
   const set = require('lodash.set')
   const s = performance.now()
-  for (let i = 0; i < 100 ** 4; i++) {
+  for (let i = 0; i < runs; i++) {
     const obj = {}
     set(obj, 'aaaa.bbbbb.ccccc.ddddd', 1)
     set(obj, 'ddddd.ccccc', 2)
@@ -17,7 +19,7 @@ if (process.argv.includes('lodash.set')) {
 if (process.argv.includes('dset')) {
   const { dset: set } = require('dset')
   const s = performance.now()
-  for (let i = 0; i < 100 ** 4; i++) {
+  for (let i = 0; i < runs; i++) {
     const obj = {}
     set(obj, 'aaaa.bbbbb.ccccc.ddddd', 1)
     set(obj, 'ddddd.ccccc', 2)
@@ -29,7 +31,7 @@ if (process.argv.includes('dset')) {
 if (process.argv.includes('fast-path-set')) {
   const set = require('./index')
   const s = performance.now()
-  for (let i = 0; i < 100 ** 4; i++) {
+  for (let i = 0; i < runs; i++) {
     const obj = {}
     set(obj, 'aaaa.bbbbb.ccccc.ddddd', 1)
     set(obj, 'ddddd.ccccc', 2)

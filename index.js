@@ -5,7 +5,7 @@ function set (obj, path, value) {
     throw new TypeError('obj is null or undefined')
   }
   const len = path.length
-  let i = 0; let l = 0; let prop = ''
+  let i = 0, l = 0, prop = ''
   while (i < len) {
     if (path[i] === '.') {
       prop = path.slice(l, i)
